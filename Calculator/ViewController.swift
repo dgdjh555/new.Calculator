@@ -16,69 +16,150 @@ class ViewController: UIViewController {
     
     
     @IBAction func Num1(_ sender: Any) {
-        Calculator.text=Calculator.text!+"1"
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
+        Calculator.text = Calculator.text!+"1"
     }
     @IBAction func Num2(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"2"
     }
     @IBAction func Num3(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"3"
     }
     @IBAction func Num4(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"4"
     }
     @IBAction func Num5(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"5"
     }
     @IBAction func Num6(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"6"
     }
     @IBAction func Num7(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"7"
     }
     @IBAction func Num8(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"8"
     }
     @IBAction func Num9(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"9"
     }
     @IBAction func Num0(_ sender: Any) {
+        if flag == 0 && sum != 0{
+            Calculator.text! = ""
+            sum = 0
+        }
+        if flag != 0 && sum == 0{
+            Calculator.text! = "";
+        }
         Calculator.text=Calculator.text!+"0"
     }
     
     
     @IBAction func Divide(_ sender: Any) {
-        flag = 1;
-        Num = Int(Calculator.text!)!;
+        flag = 1
+        Num = Int(Calculator.text!)!
+        Calculator.text! += " / "
     }
     @IBAction func Sum(_ sender: Any) {
-        flag = 2;
-        Num = Int(Calculator.text!)!;
+        flag = 2
+        Num = Int(Calculator.text!)!
+        Calculator.text! += " + "
     }
     @IBAction func Subtract(_ sender: Any) {
-        flag = 3;
-        Num = Int(Calculator.text!)!;
+        flag = 3
+        Num = Int(Calculator.text!)!
+        Calculator.text! += " - "
     }
     @IBAction func Ride(_ sender: Any) {
-        flag = 4;
-        Num = Int(Calculator.text!)!;
+        flag = 4
+        Num = Int(Calculator.text!)!
+        Calculator.text! += " * "
     }
     @IBAction func Equal(_ sender: Any) {
         if flag == 1{
             sum = Num / Int(Calculator.text!)!
             Calculator.text! = "\(sum)"
+            flag = 0
         }
         else if flag == 2{
             sum = Num + Int(Calculator.text!)!
             Calculator.text! = "\(sum)"
+            flag = 0
         }
         else if flag == 3{
             sum = Num - Int(Calculator.text!)!
             Calculator.text! = "\(sum)"
+            flag = 0
         }
         else if flag == 4{
             sum = Num * Int(Calculator.text!)!
             Calculator.text! = "\(sum)"
+            flag = 0
+        }
+        else{
+            Calculator.text! += "";
         }
     }
     @IBAction func Clear(_ sender: Any) {
@@ -86,7 +167,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        Calculator.text! = ""
+        flag = 0
+        Num = 0
+        sum = 0
     }
 
 
